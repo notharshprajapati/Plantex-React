@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { TbForklift } from "react-icons/tb";
 import { BiMoon, BiMenu } from "react-icons/bi";
+import { RiCloseLine } from "react-icons/ri";
 import styled from "styled-components";
 import links from "../Const.js";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const [showNav, setShowNav] = useState(false);
+
   return (
     <Wrapper>
-      <header className="header" id="header">
+      <header className="header">
         <nav className="nav container">
           <NavLink to="/" className="nav__logo">
             <TbForklift /> India Sale & Services Enterprises
           </NavLink>
 
-          <div className="nav__menu" id="nav-menu">
+          <div className={`${showNav ? "nav__menu show-menu" : "nav__menu"}`}>
             <ul className="nav__list">
               {links.map((link) => {
                 const { id, text, url } = link;
@@ -32,14 +35,15 @@ const Navbar = () => {
                 );
               })}
             </ul>
-            <div className="nav__close" id="nav-close">
-              <i className="ri-close-line"></i>
-            </div>
+            <RiCloseLine
+              className="nav__close"
+              onClick={() => setShowNav(false)}
+            />
           </div>
 
           <div className="nav__btns">
-            <BiMoon className="change-theme" id="theme-button" />
-            <BiMenu className="nav__toggle" id="nav-toggle" />
+            <BiMoon className="change-theme" />
+            <BiMenu className="nav__toggle" onClick={() => setShowNav(true)} />
           </div>
         </nav>
       </header>
