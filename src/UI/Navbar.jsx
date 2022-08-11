@@ -1,31 +1,15 @@
 import React from "react";
 import { TbForklift } from "react-icons/tb";
+import { BiMoon, BiMenu } from "react-icons/bi";
 import styled from "styled-components";
-
+import links from "../Const.js";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const links = [
-    {
-      id: 1,
-      text: "home",
-      url: "/",
-    },
-    {
-      id: 2,
-      text: "about",
-      url: "/about",
-    },
-    {
-      id: 3,
-      text: "products",
-      url: "/products",
-    },
-  ];
   return (
     <Wrapper>
-      <header className="lHeader" id="header">
-        <nav className="nav bdContainer">
+      <header className="header" id="header">
+        <nav className="nav container">
           <NavLink to="/" className="nav__logo">
             <TbForklift /> India Sale & Services Enterprises
           </NavLink>
@@ -35,9 +19,9 @@ const Navbar = () => {
               {links.map((link) => {
                 const { id, text, url } = link;
                 return (
-                  <li className="nav__item">
+                  <li className="nav__item" key={id}>
                     <NavLink
-                      to="/"
+                      to={url}
                       className={({ isActive }) =>
                         isActive ? "active-link" : "nav__link"
                       }
@@ -48,10 +32,14 @@ const Navbar = () => {
                 );
               })}
             </ul>
+            <div className="nav__close" id="nav-close">
+              <i className="ri-close-line"></i>
+            </div>
           </div>
 
-          <div className="nav__toggle" id="nav-toggle">
-            <i className="bx bx-menu"></i>
+          <div className="nav__btns">
+            <BiMoon className="change-theme" id="theme-button" />
+            <BiMenu className="nav__toggle" id="nav-toggle" />
           </div>
         </nav>
       </header>
@@ -60,68 +48,87 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.div`
-  .bdContainer {
-    max-width: 960px;
-    width: calc(100% - 2rem);
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .bdGrid {
-    display: grid;
-    gap: 1.5rem;
-  }
-
-  .lHeader {
+  .header {
     width: 100%;
+    background-color: var(--body-color);
     position: fixed;
     top: 0;
     left: 0;
     z-index: var(--z-fixed);
-    background-color: var(--body-color);
+    transition: 0.4s;
   }
 
-  /*========== NAV ==========*/
   .nav {
-    max-width: 1024px;
     height: var(--header-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  @media screen and (max-width: 768px) {
-    .nav__menu {
-      position: fixed;
-      top: -100%;
-      left: 0;
-      width: 100%;
-      padding: 1.5rem 0 1rem;
-      text-align: center;
-      background-color: var(--body-color);
-      transition: 0.4s;
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-      border-radius: 0 0 1rem 1rem;
-      z-index: var(--z-fixed);
-    }
-  }
-
-  .nav__item {
-    margin-bottom: var(--mb-2);
-  }
-
-  .nav__link,
   .nav__logo,
-  .nav__toggle {
-    color: var(--text-color);
-    font-weight: var(--font-medium);
+  .nav__toggle,
+  .nav__close {
+    color: var(--title-color);
+  }
+
+  .nav__logo {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -1px;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    transition: 0.3s;
+  }
+
+  .nav__logo-icon {
+    font-size: 1.15rem;
+    color: var(--first-color);
   }
 
   .nav__logo:hover {
     color: var(--first-color);
   }
 
+  .nav__toggle {
+    display: inline-flex;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 767px) {
+    .nav__menu {
+      position: fixed;
+      background-color: var(--container-color);
+      width: 80%;
+      height: 100%;
+      top: 0;
+      right: -100%;
+      box-shadow: -2px 0 4px hsla(var(--hue), 24%, 15%, 0.1);
+      padding: 4rem 0 0 3rem;
+      border-radius: 1rem 0 0 1rem;
+      transition: 0.3s;
+      z-index: var(--z-fixed);
+    }
+  }
+
+  .nav__close {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    cursor: pointer;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+
   .nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
     transition: 0.3s;
   }
 
@@ -129,136 +136,50 @@ const Wrapper = styled.div`
     color: var(--first-color);
   }
 
-  .nav__toggle {
-    font-size: 1.3rem;
-    cursor: pointer;
-  }
-
   /* Show menu */
   .show-menu {
-    top: var(--header-height);
-  }
-
-  /* Active menu */
-  .active-link {
-    color: var(--first-color);
-  }
-  .link {
-    color: var(--text-color);
+    right: 0;
   }
 
   /* Change background header */
   .scroll-header {
-    box-shadow: 0 2px 4px rgba(236, 0, 0, 0.1);
+    box-shadow: 0 1px 4px hsla(var(--hue), 24%, 15%, 0.1);
   }
 
-  /*========== MEDIA QUERIES ==========*/
-  @media screen and (min-width: 576px) {
-    .home__container,
-    .about__container,
-    .app__container {
-      grid-template-columns: repeat(2, 1fr);
-      align-items: center;
-    }
-
-    .about__data,
-    .about__initial,
-    .app__data,
-    .app__initial,
-    .contact__container,
-    .contact__initial {
-      text-align: initial;
-    }
-
-    .about__img,
-    .app__img {
-      width: 380px;
-      order: -1;
-    }
-
-    .contact__container {
-      grid-template-columns: 1.75fr 1fr;
-      align-items: center;
-    }
-    .contact__button {
-      justify-self: center;
-    }
+  /* Active link */
+  .active-link {
+    position: relative;
+    color: var(--first-color);
   }
 
-  @media screen and (min-width: 768px) {
-    body {
-      margin: 0;
-    }
-
-    .section {
-      padding-top: 8rem;
-    }
-
+  .active-link::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background-color: var(--first-color);
+  }
+  @media screen and (min-width: 767px) {
     .nav {
       height: calc(var(--header-height) + 1.5rem);
+      column-gap: 3rem;
     }
-    .nav__list {
-      display: flex;
-    }
-    .nav__item {
-      margin-left: var(--mb-5);
-      margin-bottom: 0;
-    }
-    .nav__toggle {
+  }
+  @media screen and (min-width: 767px) {
+    .nav__toggle,
+    .nav__close {
       display: none;
     }
 
-    .change-theme {
-      position: initial;
-      margin-left: var(--mb-2);
+    .nav__list {
+      flex-direction: row;
+      column-gap: 3rem;
     }
 
-    .home__container {
-      height: 100vh;
-      justify-items: center;
-    }
-
-    .services__container,
-    .menu__container {
-      margin-top: var(--mb-6);
-    }
-
-    .menu__container {
-      grid-template-columns: repeat(3, 210px);
-      column-gap: 4rem;
-    }
-    .menu__content {
-      padding: 1.5rem;
-    }
-    .menu__img {
-      width: 130px;
-    }
-
-    .app__store {
-      margin: 0 var(--mb-1) 0 0;
-    }
-  }
-
-  @media screen and (min-width: 960px) {
-    .bd-container {
+    .nav__menu {
       margin-left: auto;
-      margin-right: auto;
-    }
-
-    .home__img {
-      width: 500px;
-    }
-
-    .about__container,
-    .app__container {
-      column-gap: 7rem;
-    }
-  }
-
-  /* For tall screens on mobiles y desktop*/
-  @media screen and (min-height: 721px) {
-    .home__container {
-      height: 640px;
     }
   }
 `;
