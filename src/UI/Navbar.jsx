@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+
 import { TbForklift } from "react-icons/tb";
 import { BiMoon, BiMenu } from "react-icons/bi";
 import { RiCloseLine } from "react-icons/ri";
-import styled from "styled-components";
+
 import links from "../Const.js";
-import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
