@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { RiArrowRightDownLine } from "react-icons/ri";
 
 const Button = () => {
   return (
     <Wrapper>
-      <a href="#about" class="button button--flex">
-        Explore <i class="ri-arrow-right-down-line button__icon"></i>
+      <a href="#about" className="button button--flex">
+        Explore <RiArrowRightDownLine className="button__icon" />
       </a>
     </Wrapper>
   );
