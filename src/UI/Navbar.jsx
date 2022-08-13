@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 import { TbForklift } from "react-icons/tb";
-import { BiMoon, BiMenu } from "react-icons/bi";
-import { RiCloseLine } from "react-icons/ri";
+import { RiCloseLine, RiMenuLine } from "react-icons/ri";
 
 import links from "../Const.js";
+import Theme from "./Theme.jsx";
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
-
   return (
     <Wrapper>
       <header className="header">
@@ -44,8 +43,11 @@ const Navbar = () => {
           </div>
 
           <div className="nav__btns">
-            <BiMoon className="change-theme" />
-            <BiMenu className="nav__toggle" onClick={() => setShowNav(true)} />
+            <Theme />
+            <RiMenuLine
+              className="nav__toggle"
+              onClick={() => setShowNav(true)}
+            />
           </div>
         </nav>
       </header>
