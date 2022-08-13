@@ -17,7 +17,7 @@ const Intro = () => {
               Create incredible plant design for your offices or apastaments.
               Add fresness to your new ideas.
             </p>
-            <Button />
+            <Button text="Explore" />
           </div>
           <div className="home__social">
             <span className="home__social-follow">Follow Us</span>

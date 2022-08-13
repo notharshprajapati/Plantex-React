@@ -319,99 +319,6 @@
 }
 
 /*=============== FOOTER ===============*/
-.footer__container {
-  row-gap: 3rem;
-}
-
-.footer__logo {
-  display: inline-flex;
-  align-items: center;
-  column-gap: 0.5rem;
-  color: var(--title-color);
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: -1px;
-  margin-bottom: var(--mb-2-5);
-  transition: 0.3s;
-}
-
-.footer__logo-icon {
-  font-size: 1.15rem;
-  color: var(--first-color);
-}
-
-.footer__logo:hover {
-  color: var(--first-color);
-}
-
-.footer__title {
-  font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-1-5);
-  transition: 0.4s;
-}
-
-.footer__subscribe {
-  background-color: var(--first-color-lighten);
-  padding: 0.75rem;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 0.5rem;
-  transition: 0.4s;
-}
-
-.footer__input {
-  width: 70%;
-  padding: 0 0.5rem;
-  background: none;
-  color: var(--text-color);
-  border: none;
-  outline: none;
-}
-
-.footer__button {
-  padding: 1rem;
-}
-
-.footer__data {
-  display: grid;
-  row-gap: 0.75rem;
-}
-
-.footer__information {
-  font-size: var(--small-font-size);
-}
-
-.footer__social {
-  display: inline-flex;
-  column-gap: 0.75rem;
-}
-
-.footer__social-link {
-  font-size: 1rem;
-  color: var(--text-color);
-  transition: 0.3s;
-}
-
-.footer__social-link:hover {
-  transform: translateY(-0.25rem);
-}
-
-.footer__cards {
-  display: inline-flex;
-  align-items: center;
-  column-gap: 0.5rem;
-}
-
-.footer__card {
-  width: 35px;
-}
-
-.footer__copy {
-  text-align: center;
-  font-size: var(--smaller-font-size);
-  color: var(--text-color-light);
-  margin: 5rem 0 1rem;
-}
 
 /*=============== SCROLL UP ===============*/
 .scrollup {
@@ -490,10 +397,6 @@
     justify-content: center;
     column-gap: 5rem;
   }
-
-  .footer__subscribe {
-    width: 400px;
-  }
 }
 
 @media screen and (min-width: 767px) {
@@ -522,21 +425,12 @@
 
   .about__container,
   .questions__container,
-  .contact__container,
-  .footer__container {
+  .contact__container {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .questions__container {
     align-items: flex-start;
-  }
-
-  .footer__container {
-    column-gap: 3rem;
-  }
-
-  .footer__subscribe {
-    width: initial;
   }
 }
 
@@ -614,18 +508,6 @@
 
   .questions__description {
     padding: 0 3.5rem 2.25rem 2.75rem;
-  }
-
-  .footer__logo {
-    font-size: var(--h3-font-size);
-  }
-
-  .footer__container {
-    grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
-  }
-
-  .footer__copy {
-    margin: 7rem 0 2rem;
   }
 }
 
