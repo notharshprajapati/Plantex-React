@@ -3,40 +3,6 @@
 /*=============== BUTTONS ===============*/
 
 /*=============== ABOUT ===============*/
-.about__container {
-  row-gap: 2rem;
-}
-
-.about__img {
-  width: 280px;
-  justify-self: center;
-}
-
-.about__title {
-  margin-bottom: var(--mb-1);
-}
-
-.about__description {
-  margin-bottom: var(--mb-2);
-}
-
-.about__details {
-  display: grid;
-  row-gap: 1rem;
-  margin-bottom: var(--mb-2-5);
-}
-
-.about__details-description {
-  display: inline-flex;
-  column-gap: 0.5rem;
-  font-size: var(--small-font-size);
-}
-
-.about__details-icon {
-  font-size: 1rem;
-  color: var(--first-color);
-  margin-top: 0.15rem;
-}
 
 /*=============== STEPS ===============*/
 .steps__bg {
@@ -404,26 +370,6 @@
     margin: 0;
   }
 
-  .nav {
-    height: calc(var(--header-height) + 1.5rem);
-    column-gap: 3rem;
-  }
-
-  .nav__toggle,
-  .nav__close {
-    display: none;
-  }
-
-  .nav__list {
-    flex-direction: row;
-    column-gap: 3rem;
-  }
-
-  .nav__menu {
-    margin-left: auto;
-  }
-
-  .about__container,
   .questions__container,
   .contact__container {
     grid-template-columns: repeat(2, 1fr);
@@ -448,10 +394,6 @@
   .section__title,
   .section__title-center {
     font-size: var(--h1-font-size);
-  }
-
-  .about__img {
-    width: 380px;
   }
 
   .steps__container {
@@ -512,10 +454,6 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .about__container {
-    column-gap: 7rem;
-  }
-
   .scrollup {
     right: 3rem;
   }

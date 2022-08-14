@@ -1,7 +1,14 @@
 import React from "react";
+import About from "./About";
+import Steps from "./Steps";
 
-const About = () => {
-  return <div>About</div>;
+const index = () => {
+  return (
+    <div>
+      <About />
+      <Steps />
+    </div>
+  );
 };
 
-export default About;
+export default index;
