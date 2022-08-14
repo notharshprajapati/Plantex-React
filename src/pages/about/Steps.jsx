@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-
 const Steps = () => {
   return (
     <Wrapper>
@@ -42,7 +41,7 @@ const Steps = () => {
 };
 const Wrapper = styled.div`
   .steps__bg {
-    background-color: var(--first-color);
+    background-color: var(--first-color-dark);
     padding: 3rem 2rem 2rem;
     border-radius: 1rem;
     transition: 0.4s;

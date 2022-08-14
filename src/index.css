@@ -13,6 +13,7 @@
   --first-color-alt: hsl(var(--hue), 24%, 28%);
   --first-color-light: hsl(var(--hue), 24%, 66%);
   --first-color-lighten: hsl(var(--hue), 24%, 92%);
+  --first-color-dark: hsl(var(--hue), 24%, 32%);
   --title-color: hsl(var(--hue), 4%, 15%);
   --text-color: hsl(var(--hue), 4%, 35%);
   --text-color-light: hsl(var(--hue), 4%, 55%);
@@ -123,6 +124,19 @@ img {
   --body-color: hsl(var(--hue), 8%, 12%);
   --container-color: hsl(var(--hue), 8%, 16%);
 }
+.dark-theme .steps__bg,
+.dark-theme .questions {
+  background-color: var(--first-color-dark);
+}
+
+.dark-theme .product__circle,
+.dark-theme .footer__subscribe {
+  background-color: var(--container-color);
+}
+
+.dark-theme .scroll-header {
+  box-shadow: 0 1px 4px hsla(var(--hue), 4%, 4%, 0.3);
+}
 
 /* Button Dark/Light */
 .change-theme {
@@ -141,19 +155,6 @@ img {
 Color changes in some parts of 
 the website, in dark theme 
 ==========*/
-.dark-theme .steps__bg,
-.dark-theme .questions {
-  background-color: var(--first-color-dark);
-}
-
-.dark-theme .product__circle,
-.dark-theme .footer__subscribe {
-  background-color: var(--container-color);
-}
-
-.dark-theme .scroll-header {
-  box-shadow: 0 1px 4px hsla(var(--hue), 4%, 4%, 0.3);
-}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
