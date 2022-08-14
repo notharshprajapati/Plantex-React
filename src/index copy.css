@@ -7,69 +7,6 @@
 /*=============== STEPS ===============*/
 
 /*=============== PRODUCTS ===============*/
-.product__description {
-  text-align: center;
-}
-
-.product__container {
-  padding: 3rem 0;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem 3rem;
-}
-
-.product__card {
-  display: grid;
-  position: relative;
-}
-
-.product__img {
-  position: relative;
-  width: 120px;
-  justify-self: center;
-  margin-bottom: var(--mb-0-75);
-  transition: 0.3s;
-}
-
-.product__title,
-.product__price {
-  font-size: var(--small-font-size);
-  font-weight: var(--font-semi-bold);
-  color: var(--first-color-alt);
-}
-
-.product__title {
-  margin-bottom: 0.25rem;
-}
-
-.product__button {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background-color: var(--first-color);
-  color: #fff;
-  padding: 0.25rem;
-  border-radius: 0.35rem;
-  font-size: 1.15rem;
-}
-
-.product__button:hover {
-  background-color: var(--first-color-alt);
-}
-
-.product__circle {
-  width: 90px;
-  height: 90px;
-  background-color: var(--first-color-lighten);
-  border-radius: 50%;
-  position: absolute;
-  top: 18%;
-  left: 5%;
-  transition: 0.4s;
-}
-
-.product__card:hover .product__img {
-  transform: translateY(-0.5rem);
-}
 
 /*=============== QUESTIONS ===============*/
 .questions {
