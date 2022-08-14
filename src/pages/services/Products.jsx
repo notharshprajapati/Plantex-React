@@ -163,7 +163,7 @@ const Wrapper = styled.div`
   .product__circle {
     width: 90px;
     height: 90px;
-    background-color: var(--first-color-lighten);
+    background-color: var(--lighten-container-color);
     border-radius: 50%;
     position: absolute;
     top: 18%;
