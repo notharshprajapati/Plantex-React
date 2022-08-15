@@ -113,7 +113,7 @@ const Wrapper = styled.div`
   }
 
   .footer__subscribe {
-    background-color: var(--first-color-lighten);
+    background-color: var(--lighten-container-color);
     padding: 0.75rem;
     display: flex;
     justify-content: space-between;
