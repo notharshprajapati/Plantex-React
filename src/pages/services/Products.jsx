@@ -2,6 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { RiShoppingBagLine } from "react-icons/ri";
 
+import product1 from "../../assets/product1.png";
+import product2 from "../../assets/product2.png";
+import product3 from "../../assets/product3.png";
+import product4 from "../../assets/product4.png";
+import product5 from "../../assets/product5.png";
+import product6 from "../../assets/product6.png";
+
 const Products = () => {
   return (
     <Wrapper>
@@ -19,11 +26,7 @@ const Products = () => {
         <div className="product__container grid">
           <article className="product__card">
             <div className="product__circle"></div>
-            <img
-              src="assets/img/product1.png"
-              alt=""
-              className="product__img"
-            />
+            <img src={product1} alt="" className="product__img" />
             <h3 className="product__title">Cacti Plant</h3>
             <span className="product__price">$19.99</span>
             <button className="button--flex product__button">
@@ -33,11 +36,7 @@ const Products = () => {
 
           <article className="product__card">
             <div className="product__circle"></div>
-            <img
-              src="assets/img/product2.png"
-              alt=""
-              className="product__img"
-            />
+            <img src={product2} alt="" className="product__img" />
             <h3 className="product__title">Cactus Plant</h3>
             <span className="product__price">$11.99</span>
             <button className="button--flex product__button">
@@ -47,11 +46,7 @@ const Products = () => {
 
           <article className="product__card">
             <div className="product__circle"></div>
-            <img
-              src="assets/img/product3.png"
-              alt=""
-              className="product__img"
-            />
+            <img src={product3} alt="" className="product__img" />
             <h3 className="product__title">Aloe Vera Plant</h3>
             <span className="product__price">$7.99</span>
             <button className="button--flex product__button">
@@ -61,11 +56,7 @@ const Products = () => {
 
           <article className="product__card">
             <div className="product__circle"></div>
-            <img
-              src="assets/img/product4.png"
-              alt=""
-              className="product__img"
-            />
+            <img src={product4} alt="" className="product__img" />
             <h3 className="product__title">Succulent Plant</h3>
             <span className="product__price">$4.99</span>
             <button className="button--flex product__button">
@@ -75,11 +66,7 @@ const Products = () => {
 
           <article className="product__card">
             <div className="product__circle"></div>
-            <img
-              src="assets/img/product5.png"
-              alt=""
-              className="product__img"
-            />
+            <img src={product5} alt="" className="product__img" />
             <h3 className="product__title">Succulent Plant</h3>
             <span className="product__price">$11.99</span>
             <button className="button--flex product__button">
@@ -89,11 +76,7 @@ const Products = () => {
 
           <article className="product__card">
             <div className="product__circle"></div>
-            <img
-              src="assets/img/product6.png"
-              alt=""
-              className="product__img"
-            />
+            <img src={product6} alt="" className="product__img" />
             <h3 className="product__title">Green Plant</h3>
             <span className="product__price">$8.99</span>
             <button className="button--flex product__button">

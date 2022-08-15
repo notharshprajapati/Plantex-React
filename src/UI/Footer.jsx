@@ -10,6 +10,11 @@ import {
   RiTwitterFill,
 } from "react-icons/ri";
 
+import card1 from "../assets/card1.png";
+import card2 from "../assets/card2.png";
+import card3 from "../assets/card3.png";
+import card4 from "../assets/card4.png";
+
 const Footer = () => {
   return (
     <Wrapper>
@@ -70,10 +75,10 @@ const Footer = () => {
           <div className="footer__content">
             <h3 className="footer__title">We accept all credit cards</h3>
             <div className="footer__cards">
-              <img src="assets/img/card1.png" alt="" className="footer__card" />
-              <img src="assets/img/card2.png" alt="" className="footer__card" />
-              <img src="assets/img/card3.png" alt="" className="footer__card" />
-              <img src="assets/img/card4.png" alt="" className="footer__card" />
+              <img src={card1} alt="" className="footer__card" />
+              <img src={card2} alt="" className="footer__card" />
+              <img src={card3} alt="" className="footer__card" />
+              <img src={card4} alt="" className="footer__card" />
             </div>
           </div>
         </div>

@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
+import home from "../../assets/home.png";
+
 import { RiFacebookFill, RiInstagramLine, RiTwitterFill } from "react-icons/ri";
 const Intro = () => {
   return (
     <Wrapper>
       <section className="home">
         <div className="home__container container grid">
-          <img src="assets/img/home.png" alt="" className="home__img" />
+          <img src={home} alt="" className="home__img" />
           <div className="home__data">
             <h1 className="home__title">
               Plants will make <br />

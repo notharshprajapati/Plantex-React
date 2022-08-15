@@ -3,13 +3,14 @@ import styled from "styled-components";
 import Button from "../../UI/Button";
 import { RiCheckboxFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
+import about from "../../assets/about.png";
 
 const About = () => {
   return (
     <Wrapper>
       <section className="about section container" id="about">
         <div className="about__container grid">
-          <img src="assets/img/about.png" alt="" className="about__img" />
+          <img src={about} alt="" className="about__img" />
           <div className="about__data">
             <h2 className="section__title about__title">
               Who we really are & <br />

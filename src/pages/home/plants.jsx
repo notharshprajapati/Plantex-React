@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../UI/Button";
-import { RiFacebookFill, RiInstagramLine, RiTwitterFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
+import plants from "../../assets/plants.jpeg";
 const Plants = () => {
   return (
     <Wrapper>
       <section className="home">
         <div className="home__container container grid">
-          <img src="assets/img/plants.jpeg" alt="" className="home__img" />
+          <img src={plants} alt="" className="home__img" />
           <div className="home__data">
             <h1 className="home__title">
               We got a wide <br />
