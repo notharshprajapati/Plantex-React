@@ -3,8 +3,12 @@ import styled from "styled-components";
 
 import Button from "./Button";
 
-import { TbForklift } from "react-icons/tb";
-import { RiFacebookFill, RiInstagramLine, RiTwitterFill } from "react-icons/ri";
+import {
+  RiLeafLine,
+  RiFacebookFill,
+  RiInstagramLine,
+  RiTwitterFill,
+} from "react-icons/ri";
 
 const Footer = () => {
   return (
@@ -13,8 +17,8 @@ const Footer = () => {
         <div className="footer__container container grid">
           <div className="footer__content">
             <a href="#" className="footer__logo">
-              <TbForklift className=" footer__logo-icon" />
-              India Sale & Services Enterprises
+              <RiLeafLine className=" footer__logo-icon" />
+              Plantex
             </a>
             <h3 className="footer__title">
               Subscribe to our newsletter <br />

@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-import { TbForklift } from "react-icons/tb";
-import { RiCloseLine, RiMenuLine } from "react-icons/ri";
+import { RiLeafLine, RiCloseLine, RiMenuLine } from "react-icons/ri";
 
 import links from "../Const.js";
 import Theme from "./Theme.jsx";
@@ -19,7 +18,7 @@ const Navbar = ({ scrollPosition }) => {
       >
         <nav className="nav container">
           <NavLink to="/" className="nav__logo">
-            <TbForklift /> India Sale & Services Enterprises
+            <RiLeafLine /> Plantex
           </NavLink>
 
           <div className={`${showNav ? "nav__menu show-menu" : "nav__menu"}`}>

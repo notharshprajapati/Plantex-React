@@ -1,48 +1,26 @@
 import React from "react";
 import styled from "styled-components";
-
+import Button from "../../UI/Button";
 import { RiFacebookFill, RiInstagramLine, RiTwitterFill } from "react-icons/ri";
-const Intro = () => {
+import { NavLink } from "react-router-dom";
+const Plants = () => {
   return (
     <Wrapper>
       <section className="home">
         <div className="home__container container grid">
-          <img src="assets/img/home.png" alt="" className="home__img" />
+          <img src="assets/img/plants.jpeg" alt="" className="home__img" />
           <div className="home__data">
             <h1 className="home__title">
-              Plants will make <br />
-              your life better
+              We got a wide <br />
+              variety of plants
             </h1>
             <p className="home__description">
-              Create incredible plant design for your offices or apastaments.
-              Add fresness to your new ideas.
+              Flowering Plants and Non-Flowering Plants <br />
+              we got em all
             </p>
-          </div>
-          <div className="home__social">
-            <span className="home__social-follow">Follow Us</span>
-            <div className="home__social-links">
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                className="home__social-link"
-              >
-                <RiFacebookFill />
-              </a>
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                className="home__social-link"
-              >
-                <RiInstagramLine />
-              </a>
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                className="home__social-link"
-              >
-                <RiTwitterFill />
-              </a>
-            </div>
+            <NavLink to="/services">
+              <Button text="Explore" />
+            </NavLink>
           </div>
         </div>
       </section>
@@ -63,6 +41,7 @@ const Wrapper = styled.div`
   .home__img {
     width: 200px;
     justify-self: center;
+    border-radius: 1rem;
   }
 
   .home__title {
@@ -145,8 +124,8 @@ const Wrapper = styled.div`
     }
 
     .home__img {
-      width: 280px;
-      order: 1;
+      width: 320px;
+      order: -1;
     }
 
     .home__social {
@@ -162,6 +141,7 @@ const Wrapper = styled.div`
 
     .home__img {
       width: 350px;
+      margin-right: 5vh;
     }
 
     .home__description {
@@ -190,4 +170,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Intro;
+export default Plants;

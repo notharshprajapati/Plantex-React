@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../../UI/Button";
 import { RiCheckboxFill } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
 
 const About = () => {
   return (
@@ -36,7 +37,9 @@ const About = () => {
                 100% money back guaranteed.
               </p>
             </div>
-            <Button text="Shop Now" />
+            <NavLink to="/services">
+              <Button text="Shop Now" />
+            </NavLink>
           </div>
         </div>
       </section>

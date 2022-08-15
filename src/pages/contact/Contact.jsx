@@ -5,7 +5,7 @@ import { RiPhoneLine, RiMailLine } from "react-icons/ri";
 const Contact = () => {
   return (
     <Wrapper>
-      <section className="contact section container" id="contact">
+      <section className="contact section container">
         <div className="contact__container grid">
           <div className="contact__box">
             <h2 className="section__title">
@@ -69,6 +69,10 @@ const Contact = () => {
 };
 
 const Wrapper = styled.div`
+  .section {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
   .contact__container {
     row-gap: 3.5rem;
   }
