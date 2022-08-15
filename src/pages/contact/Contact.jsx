@@ -43,16 +43,12 @@ const Contact = () => {
                   placeholder=" "
                   className="contact__input"
                 />
-                <label for="" className="contact__label">
-                  Email
-                </label>
+                <label className="contact__label">Email</label>
               </div>
 
               <div className="contact__content">
                 <input type="text" placeholder=" " className="contact__input" />
-                <label for="" className="contact__label">
-                  Subject
-                </label>
+                <label className="contact__label">Subject</label>
               </div>
 
               <div className="contact__content contact__area">
@@ -61,9 +57,7 @@ const Contact = () => {
                   placeholder=" "
                   className="contact__input"
                 ></textarea>
-                <label for="" className="contact__label">
-                  Message
-                </label>
+                <label className="contact__label">Message</label>
               </div>
             </div>
             <Button text="Send Message" />
