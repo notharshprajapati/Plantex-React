@@ -1,108 +1,83 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
 import { RiAddLine } from "react-icons/ri";
 
+import styled from "styled-components";
+
+const data = [
+  {
+    question: "What causes brown crispy leaves?",
+    answer:
+      "Plants are easy way to add color energy and transform your space but which planet is for you. Choosing the right plant.",
+  },
+  {
+    question: "My flowers are falling off or dying?",
+    answer:
+      "Plants are easy way to add color energy and transform your space but which planet is for you. Choosing the right plant.",
+  },
+  {
+    question: "What causes leaves to become pale?",
+    answer:
+      "Plants are easy way to add color energy and transform your space but which planet is for you. Choosing the right plant. ",
+  },
+  {
+    question: "How do i choose a plant?",
+    answer:
+      "Plants are easy way to add color energy and transform your space but which planet is for you. Choosing the right plant.",
+  },
+  {
+    question: "How do I change the pots?",
+    answer:
+      "Plants are easy way to add color energy and transform your space but which planet is for you. Choosing the right plant.",
+  },
+  {
+    question: "Why are gnats flying around my plant?",
+    answer:
+      "Plants are easy way to add color energy and transform your space but which planet is for you. Choosing the right plant.",
+  },
+];
+
 const Question = () => {
+  const [selected, setSelected] = useState(null);
+  const toggle = (i) => {
+    if (selected === i) {
+      return setSelected(null);
+    } else {
+      setSelected(i);
+    }
+  };
   return (
     <Wrapper>
-      <section className="questions section" id="faqs">
+      <section className="questions section " id="faqs">
         <h2 className="section__title-center questions__title container">
           Some common questions <br />
           were often asked
         </h2>
-        <div className="questions__container container grid">
-          <div className="questions__group">
-            <div className="questions__item">
-              <header className="questions__header">
-                <RiAddLine className="questions__icon" />
-                <h3 className="questions__item-title">
-                  What causes brown crispy leaves?
-                </h3>
-              </header>
-              <div className="questions__content">
-                <p className="questions__description">
-                  Plants are easy way to add color energy and transform your
-                  space but which planet is for you. Choosing the right plant.
-                </p>
+        <div className="container grid">
+          <div className="group">
+            {data.map((item, i) => (
+              <div onClick={() => toggle(i)}>
+                <div
+                  className={
+                    selected === i
+                      ? " questions__item accordion-open"
+                      : "questions__item "
+                  }
+                >
+                  <header className="questions__header">
+                    <RiAddLine className="questions__icon" />
+                    <h3 className="questions__item-title">{item.question}</h3>
+                  </header>
+                  <div
+                    className="questions__content "
+                    style={{
+                      height: `${selected === i ? "80px" : "0px "}`,
+                    }}
+                  >
+                    <p className="questions__description ">{item.answer}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-
-            <div className="questions__item">
-              <header className="questions__header">
-                <RiAddLine className="questions__icon" />
-                <h3 className="questions__item-title">
-                  My flowers are falling off or dying?
-                </h3>
-              </header>
-              <div className="questions__content">
-                <p className="questions__description">
-                  Plants are easy way to add color energy and transform your
-                  space but which planet is for you. Choosing the right plant.
-                </p>
-              </div>
-            </div>
-
-            <div className="questions__item">
-              <header className="questions__header">
-                <RiAddLine className="questions__icon" />
-                <h3 className="questions__item-title">
-                  What causes leaves to become pale?
-                </h3>
-              </header>
-              <div className="questions__content">
-                <p className="questions__description">
-                  Plants are easy way to add color energy and transform your
-                  space but which planet is for you. Choosing the right plant.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="questions__group">
-            <div className="questions__item">
-              <header className="questions__header">
-                <RiAddLine className="questions__icon" />
-                <h3 className="questions__item-title">
-                  How do i choose a plant?
-                </h3>
-              </header>
-              <div className="questions__content">
-                <p className="questions__description">
-                  Plants are easy way to add color energy and transform your
-                  space but which planet is for you. Choosing the right plant.
-                </p>
-              </div>
-            </div>
-
-            <div className="questions__item">
-              <header className="questions__header">
-                <RiAddLine className="questions__icon" />
-                <h3 className="questions__item-title">
-                  How do I change the pots?
-                </h3>
-              </header>
-              <div className="questions__content">
-                <p className="questions__description">
-                  Plants are easy way to add color energy and transform your
-                  space but which planet is for you. Choosing the right plant.
-                </p>
-              </div>
-            </div>
-
-            <div className="questions__item">
-              <header className="questions__header">
-                <RiAddLine className="questions__icon" />
-                <h3 className="questions__item-title">
-                  Why are gnats flying around my plant?
-                </h3>
-              </header>
-              <div className="questions__content">
-                <p className="questions__description">
-                  Plants are easy way to add color energy and transform your
-                  space but which planet is for you. Choosing the right plant.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -110,21 +85,15 @@ const Question = () => {
   );
 };
 const Wrapper = styled.div`
+  .group {
+    margin: 2rem 0rem 2rem 0rem;
+  }
   .questions {
     background-color: var(--question-container-color);
   }
 
-  .questions__container {
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-  }
-
-  .questions__group {
-    display: grid;
-    row-gap: 1.5rem;
-  }
-
   .questions__item {
+    margin: 2rem 0rem 2rem 0rem;
     background-color: var(--container-color);
     border-radius: 0.25rem;
   }
@@ -187,21 +156,20 @@ const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 767px) {
-    .questions__container {
+    .group {
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
     }
-
-    .questions__container {
-      align-items: flex-start;
+    .questions__item {
+      margin: 0rem;
+      background-color: var(--container-color);
+      border-radius: 0.25rem;
     }
   }
 
   /* For large devices */
   @media screen and (min-width: 992px) {
-    .questions__container {
-      padding: 1rem 0 4rem;
-    }
-
     .questions__title {
       text-align: initial;
     }

@@ -6,13 +6,12 @@ import ScrollUp from "../UI/ScrollUp";
 // import ScrollTop from "./component/UI/ScrollTop";
 
 const SharedLayout = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
   };
-
-  const [scrollPosition, setScrollPosition] = useState(0);
-
+  
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
