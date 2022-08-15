@@ -3,15 +3,20 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../UI/Navbar";
 import Footer from "../UI/Footer";
 import ScrollUp from "../UI/ScrollUp";
-// import ScrollTop from "./component/UI/ScrollTop";
+import { useLocation } from "react-router-dom";
 
 const SharedLayout = () => {
+  const { pathname } = useLocation();
+
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
   };
-  
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 

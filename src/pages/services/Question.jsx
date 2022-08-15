@@ -55,26 +55,26 @@ const Question = () => {
         <div className="container grid">
           <div className="group">
             {data.map((item, i) => (
-              <div onClick={() => toggle(i)}>
+              <div
+                className={
+                  selected === i
+                    ? " questions__item accordion-open"
+                    : "questions__item "
+                }
+                onClick={() => toggle(i)}
+                key={i}
+              >
+                <header className="questions__header">
+                  <RiAddLine className="questions__icon" />
+                  <h3 className="questions__item-title">{item.question}</h3>
+                </header>
                 <div
-                  className={
-                    selected === i
-                      ? " questions__item accordion-open"
-                      : "questions__item "
-                  }
+                  className="questions__content "
+                  style={{
+                    height: `${selected === i ? "80px" : "0px "}`,
+                  }}
                 >
-                  <header className="questions__header">
-                    <RiAddLine className="questions__icon" />
-                    <h3 className="questions__item-title">{item.question}</h3>
-                  </header>
-                  <div
-                    className="questions__content "
-                    style={{
-                      height: `${selected === i ? "80px" : "0px "}`,
-                    }}
-                  >
-                    <p className="questions__description ">{item.answer}</p>
-                  </div>
+                  <p className="questions__description ">{item.answer}</p>
                 </div>
               </div>
             ))}
