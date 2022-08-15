@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
@@ -8,33 +8,15 @@ import { RiCloseLine, RiMenuLine } from "react-icons/ri";
 import links from "../Const.js";
 import Theme from "./Theme.jsx";
 
-const Navbar = () => {
+const Navbar = ({ scrollPosition }) => {
   const [showNav, setShowNav] = useState(false);
-
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
-
-  const [scroll, setScroll] = useState("header");
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    if (scrollPosition < 200) {
-      setScroll("header");
-    } else {
-      setScroll("header scroll-header");
-    }
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [scrollPosition]);
-
   return (
     <Wrapper>
-      <header className={scroll}>
+      <header
+        className={`${
+          scrollPosition < 200 ? "header" : "header scroll-header"
+        }`}
+      >
         <nav className="nav container">
           <NavLink to="/" className="nav__logo">
             <TbForklift /> India Sale & Services Enterprises
