@@ -111,7 +111,7 @@ const Question = () => {
 };
 const Wrapper = styled.div`
   .questions {
-    background-color: var(--first-color-lighten);
+    background-color: var(--question-container-color);
   }
 
   .questions__container {

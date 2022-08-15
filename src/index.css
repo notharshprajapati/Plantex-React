@@ -19,6 +19,7 @@
   --text-color-light: hsl(var(--hue), 4%, 55%);
   --body-color: hsl(var(--hue), 0%, 100%);
   --lighten-container-color: hsl(var(--hue), 24%, 92%);
+  --question-container-color: hsl(var(--hue), 24%, 92%);
   --container-color: #fff;
 
   /*========== Font and typography ==========*/
@@ -125,6 +126,7 @@ img {
   --body-color: hsl(var(--hue), 8%, 12%);
   --container-color: hsl(var(--hue), 8%, 16%);
   --lighten-container-color: hsl(var(--hue), 8%, 16%);
+  --question-container-color: hsl(var(--hue), 8%, 20%);
 }
 .dark-theme .steps__bg,
 .dark-theme .questions {
